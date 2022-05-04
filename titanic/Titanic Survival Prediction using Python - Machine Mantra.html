@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://machinemantra.in/titanic-data-set/ -->
+<html class="html" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+
+	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="pingback" href="https://machinemantra.in/xmlrpc.php">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- This site is optimized with the Yoast SEO plugin v17.5 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Titanic Survival Prediction using Python - Machine Mantra</title>
+	<meta name="description" content="titanic survival prediction using machine learning. Data Exploration, data visualization, model building in python. Titanic Survival Prediction Dataset">
+	<link rel="canonical" href="https://machinemantra.in/titanic-data-set/">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Titanic Survival Prediction using Python - Machine Mantra">
+	<meta property="og:description" content="titanic survival prediction using machine learning. Data Exploration, data visualization, model building in python. Titanic Survival Prediction Dataset">
+	<meta property="og:url" content="https://machinemantra.in/titanic-data-set/">
+	<meta property="og:site_name" content="Machine Mantra">
+	<meta property="article:published_time" content="2019-09-27T17:01:52+00:00">
+	<meta property="article:modified_time" content="2021-09-02T15:56:25+00:00">
+	<meta property="og:image" content="https://machinemantra.in/wp-content/uploads/2019/09/titanic.png">
+	<meta property="og:image:width" content="800">
+	<meta property="og:image:height" content="600">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:creator" content="@https://twitter.com/PriancaaSharma">
+	<meta name="twitter:label1" content="Written by">
+	<meta name="twitter:data1" content="Priyanka">
+	<meta name="twitter:label2" content="Est. reading time">
+	<meta name="twitter:data2" content="7 minutes">
+	<script type="text/javascript" charset="utf-8" src="./Titanic Survival Prediction using Python - Machine Mantra_files/popup.js.téléchargement"></script><script src="./Titanic Survival Prediction using Python - Machine Mantra_files/f.txt"></script><script type="text/javascript" async="" src="./Titanic Survival Prediction using Python - Machine Mantra_files/analytics.js.téléchargement"></script><script src="./Titanic Survival Prediction using Python - Machine Mantra_files/f(1).txt" id="google_shimpl"></script><script async="" src="./Titanic Survival Prediction using Python - Machine Mantra_files/7d623d2ea246c8f2bf8cb104c.js.téléchargement"></script><script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://machinemantra.in/#website","url":"https://machinemantra.in/","name":"Machine Mantra","description":"Online Learning Simplified","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://machinemantra.in/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://machinemantra.in/titanic-data-set/#primaryimage","inLanguage":"en-US","url":"https://machinemantra.in/wp-content/uploads/2019/09/titanic.png","contentUrl":"https://machinemantra.in/wp-content/uploads/2019/09/titanic.png","width":800,"height":600,"caption":"Titanic Survival Prediction"},{"@type":"WebPage","@id":"https://machinemantra.in/titanic-data-set/#webpage","url":"https://machinemantra.in/titanic-data-set/","name":"Titanic Survival Prediction using Python - Machine Mantra","isPartOf":{"@id":"https://machinemantra.in/#website"},"primaryImageOfPage":{"@id":"https://machinemantra.in/titanic-data-set/#primaryimage"},"datePublished":"2019-09-27T17:01:52+00:00","dateModified":"2021-09-02T15:56:25+00:00","author":{"@id":"https://machinemantra.in/#/schema/person/9d7ae1c9429ff76136ff0e934ba5adea"},"description":"titanic survival prediction using machine learning. Data Exploration, data visualization, model building in python. Titanic Survival Prediction Dataset","breadcrumb":{"@id":"https://machinemantra.in/titanic-data-set/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://machinemantra.in/titanic-data-set/"]}]},{"@type":"BreadcrumbList","@id":"https://machinemantra.in/titanic-data-set/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://machinemantra.in/"},{"@type":"ListItem","position":2,"name":"Titanic Survival Prediction using Python"}]},{"@type":"Person","@id":"https://machinemantra.in/#/schema/person/9d7ae1c9429ff76136ff0e934ba5adea","name":"Priyanka","image":{"@type":"ImageObject","@id":"https://machinemantra.in/#personlogo","inLanguage":"en-US","url":"https://secure.gravatar.com/avatar/0b73d009a0429e6ade92288f0726e1c6?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/0b73d009a0429e6ade92288f0726e1c6?s=96&d=mm&r=g","caption":"Priyanka"},"description":"Hi, I am Priyanka. Realized lately that teaching is my passion. I teach Machine Learning, making the concepts easier to digest especially for beginners.","sameAs":["http://sh033.global.temp.domains/~machinem","https://www.instagram.com/machinemantra","https://www.linkedin.com/in/priyanka-sharma-334993164","https://twitter.com/https://twitter.com/PriancaaSharma","https://www.youtube.com/c/PriyankaSharmastudyclub"],"url":"https://machinemantra.in/author/sharma25prianca/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="dns-prefetch" href="https://www.googletagmanager.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="dns-prefetch" href="https://c0.wp.com/">
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com/">
+<link rel="alternate" type="application/rss+xml" title="Machine Mantra » Feed" href="https://machinemantra.in/feed/">
+<link rel="alternate" type="application/rss+xml" title="Machine Mantra » Comments Feed" href="https://machinemantra.in/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Machine Mantra » Titanic Survival Prediction using Python Comments Feed" href="https://machinemantra.in/titanic-data-set/feed/">
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/machinemantra.in\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.2"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+</script><script src="./Titanic Survival Prediction using Python - Machine Mantra_files/wp-emoji-release.min.js.téléchargement" type="text/javascript" defer=""></script>
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="./Titanic Survival Prediction using Python - Machine Mantra_files/style.min.css" media="all">
+<style id="wp-block-library-inline-css">
+.has-text-align-justify{text-align:justify;}
+</style>
+<style id="wp-block-library-theme-inline-css">
+.wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-code>code{font-family:Menlo,Consolas,monaco,monospace;color:#1e1e1e;padding:.8em 1em;border:1px solid #ddd;border-radius:4px}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-pullquote{border-top:4px solid;border-bottom:4px solid;margin-bottom:1.75em;color:currentColor}.wp-block-pullquote__citation,.wp-block-pullquote cite,.wp-block-pullquote footer{color:currentColor;text-transform:uppercase;font-size:.8125em;font-style:normal}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;position:relative;font-style:normal}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-group:where(.has-background){padding:1.25em 2.375em}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto;opacity:.4}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table thead{border-bottom:3px solid}.wp-block-table tfoot{border-top:3px solid}.wp-block-table td,.wp-block-table th{padding:.5em;border:1px solid;word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-template-part.has-background{padding:1.25em 2.375em;margin-top:0;margin-bottom:0}
+</style>
+<style id="ideabox-toc-style-inline-css">
+html{scroll-behavior:auto !important}.ib-toc-container .ib-toc-icon-collapse,.ib-toc-container .ib-toc-icon-expand{display:none;height:20px;line-height:1}.ib-toc-container .ib-toc-icon-collapse svg,.ib-toc-container .ib-toc-icon-expand svg{fill:var(--fill)}.ib-toc-container.ib-toc-expanded .ib-toc-icon-collapse{display:inline}.ib-toc-container.ib-toc-collapsed .ib-toc-icon-expand{display:inline}.ib-toc-container .ib-toc-header{padding:10px 20px;display:flex;flex-direction:row;justify-content:space-between;align-items:center;cursor:pointer}.ib-toc-container .ib-toc-header .ib-toc-header-right{display:flex}.ib-toc-container .ib-toc-body{padding:20px}.ib-toc-container .ib-toc-separator{height:1px;background-color:#333}.ib-toc-container .ib-toc-anchors{margin:0;padding:0}.ib-toc-container .ib-toc-anchors ul,.ib-toc-container .ib-toc-anchors ol{padding-left:45px}.ib-toc-container .ib-toc-anchors li{margin-top:var(--listSpacing)}.ib-toc-container .ib-toc-anchors>li:first-of-type{margin-top:0}.ib-toc-container .ib-toc-anchors a{color:var(--linkColor)}.ib-toc-container ol{list-style:none !important;counter-reset:item}.ib-toc-container ol li{counter-increment:item}.ib-toc-container ol li:before{content:counters(item, ".") " ";display:inline-block;margin-right:.5em;text-align:right}.ib-toc-container ol.ib-toc-anchors>li:before{content:counters(item, ".") ". "}
+
+</style>
+<link rel="stylesheet" id="mediaelement-css" href="./Titanic Survival Prediction using Python - Machine Mantra_files/mediaelementplayer-legacy.min.css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="./Titanic Survival Prediction using Python - Machine Mantra_files/wp-mediaelement.min.css" media="all">
+<style id="global-styles-inline-css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel="stylesheet" id="font-awesome-css" href="./Titanic Survival Prediction using Python - Machine Mantra_files/all.min.css" media="all">
+<link rel="stylesheet" id="simple-line-icons-css" href="./Titanic Survival Prediction using Python - Machine Mantra_files/simple-line-icons.min.css" media="all">
+<link rel="stylesheet" id="oceanwp-style-css" href="./Titanic Survival Prediction using Python - Machine Mantra_files/style.min(1).css" media="all">
+<link rel="stylesheet" id="oceanwp-google-font-arima-madurai-css" href="./Titanic Survival Prediction using Python - Machine Mantra_files/css" media="all">
+<link rel="stylesheet" id="cookie-notice-front-css" href="./Titanic Survival Prediction using Python - Machine Mantra_files/front.min.css" media="all">
+<link rel="stylesheet" id="oe-widgets-style-css" href="./Titanic Survival Prediction using Python - Machine Mantra_files/widgets.css" media="all">
+<link rel="stylesheet" id="learnpress-widgets-css" href="./Titanic Survival Prediction using Python - Machine Mantra_files/widgets(1).css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="./Titanic Survival Prediction using Python - Machine Mantra_files/jetpack.css" media="all">
+<script src="./Titanic Survival Prediction using Python - Machine Mantra_files/jquery.min.js.téléchargement" id="jquery-core-js"></script>
+<script src="./Titanic Survival Prediction using Python - Machine Mantra_files/jquery-migrate.min.js.téléchargement" id="jquery-migrate-js"></script>
+<script src="./Titanic Survival Prediction using Python - Machine Mantra_files/frontend.js.téléchargement" id="ideabox-toc-script-js"></script>
+<script src="./Titanic Survival Prediction using Python - Machine Mantra_files/smoothscroll.min.js.téléchargement" id="ow-smoothscroll-js"></script>
+<script id="cookie-notice-front-js-extra">
+var cnArgs = {"ajaxUrl":"https:\/\/machinemantra.in\/wp-admin\/admin-ajax.php","nonce":"66c2027c71","hideEffect":"fade","position":"bottom","onScroll":"0","onScrollOffset":"100","onClick":"0","cookieName":"cookie_notice_accepted","cookieTime":"2592000","cookieTimeRejected":"2592000","cookiePath":"\/","cookieDomain":"","redirection":"0","cache":"0","refuse":"0","revokeCookies":"0","revokeCookiesOpt":"automatic","secure":"1"};
+</script>
+<script async="" src="./Titanic Survival Prediction using Python - Machine Mantra_files/front.min.js.téléchargement" id="cookie-notice-front-js"></script>
+
+<!-- Google Analytics snippet added by Site Kit -->
+<script src="./Titanic Survival Prediction using Python - Machine Mantra_files/js" id="google_gtagjs-js" async=""></script>
+<script id="google_gtagjs-js-after">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag('set', 'linker', {"domains":["machinemantra.in"]} );
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "UA-177217455-1", {"anonymize_ip":true});
+</script>
+
+<!-- End Google Analytics snippet added by Site Kit -->
+<link rel="https://api.w.org/" href="https://machinemantra.in/wp-json/"><link rel="alternate" type="application/json" href="https://machinemantra.in/wp-json/wp/v2/posts/636"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://machinemantra.in/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://machinemantra.in/wp-includes/wlwmanifest.xml"> 
+<link rel="shortlink" href="https://machinemantra.in/?p=636">
+<link rel="alternate" type="application/json+oembed" href="https://machinemantra.in/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmachinemantra.in%2Ftitanic-data-set%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://machinemantra.in/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmachinemantra.in%2Ftitanic-data-set%2F&amp;format=xml">
+<meta name="generator" content="Site Kit by Google 1.45.0"><script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/94e26d1fc6b044d9a01a10c17/7d623d2ea246c8f2bf8cb104c.js");</script>
+		<style id="learn-press-custom-css">
+			:root {
+				--lp-primary-color: #ffb606;
+				--lp-secondary-color: #442e66;
+			}
+		</style>
+
+		<style type="text/css">img#wpstats{display:none}</style>
+		
+<!-- Google AdSense snippet added by Site Kit -->
+<meta name="google-adsense-platform-account" content="ca-host-pub-2644536267352236">
+<meta name="google-adsense-platform-domain" content="sitekit.withgoogle.com">
+<!-- End Google AdSense snippet added by Site Kit -->
+
+<!-- Google AdSense snippet added by Site Kit -->
+<script src="./Titanic Survival Prediction using Python - Machine Mantra_files/f(2).txt" crossorigin="anonymous" data-checked-head="true"></script><meta http-equiv="origin-trial" content="AxujKG9INjsZ8/gUq8+dTruNvk7RjZQ1oFhhgQbcTJKDnZfbzSTE81wvC2Hzaf3TW4avA76LTZEMdiedF1vIbA4AAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="Azuce85ORtSnWe1MZDTv68qpaW3iHyfL9YbLRy0cwcCZwVnePnOmkUJlG8HGikmOwhZU22dElCcfrfX2HhrBPAkAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A16nvcdeoOAqrJcmjLRpl1I6f3McDD8EfofAYTt/P/H4/AWwB99nxiPp6kA0fXoiZav908Z8etuL16laFPUdfQsAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AxBHdr0J44vFBQtZUqX9sjiqf5yWZ/OcHRcRMN3H9TH+t90V/j3ENW6C8+igBZFXMJ7G3Pr8Dd13632aLng42wgAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2NTI3NzQ0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A88BWHFjcawUfKU3lIejLoryXoyjooBXLgWmGh+hNcqMK44cugvsI5YZbNarYvi3roc1fYbHA1AVbhAtuHZflgEAAAB2eyJvcmlnaW4iOiJodHRwczovL2dvb2dsZS5jb206NDQzIiwiZmVhdHVyZSI6IlRydXN0VG9rZW5zIiwiZXhwaXJ5IjoxNjUyNzc0NDAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A8FHS1NmdCwGqD9DwOicnHHY+y27kdWfxKa0YHSGDfv0CSpDKRHTQdQmZVPDUdaFWUsxdgVxlwAd6o+dhJykPA0AAACWeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjQzMTU1MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="A8zdXi6dr1hwXEUjQrYiyYQGlU3557y5QWDnN0Lwgj9ePt66XMEvNkVWOEOWPd7TP9sBQ25X0Q15Lr1Nn4oGFQkAAACceyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjQzMTU1MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><meta http-equiv="origin-trial" content="A4/Htern2udN9w3yJK9QgWQxQFruxOXsXL7cW60DyCl0EZFGCSme/J33Q/WzF7bBkVvhEWDlcBiUyZaim5CpFQwAAACceyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjQzMTU1MTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9">
+
+<!-- End Google AdSense snippet added by Site Kit -->
+<link rel="icon" href="https://machinemantra.in/wp-content/uploads/2021/11/Modern-Sport-Logo-with-Eagle-Illustration-4-150x150.png" sizes="32x32">
+<link rel="icon" href="https://machinemantra.in/wp-content/uploads/2021/11/Modern-Sport-Logo-with-Eagle-Illustration-4-300x300.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://machinemantra.in/wp-content/uploads/2021/11/Modern-Sport-Logo-with-Eagle-Illustration-4-300x300.png">
+<meta name="msapplication-TileImage" content="https://machinemantra.in/wp-content/uploads/2021/11/Modern-Sport-Logo-with-Eagle-Illustration-4-300x300.png">
+		<style id="wp-custom-css">
+			/* Sidebar title */#sidebar .widget-title{background-color:#f9f9f9;font-size:11px;border-width:0 0 1px;padding:16px 12px;text-align:center}		</style>
+		<!-- OceanWP CSS -->
+<style type="text/css">
+/* General CSS */a:hover,a.light:hover,.theme-heading .text::before,.theme-heading .text::after,#top-bar-content >a:hover,#top-bar-social li.oceanwp-email a:hover,#site-navigation-wrap .dropdown-menu >li >a:hover,#site-header.medium-header #medium-searchform button:hover,.oceanwp-mobile-menu-icon a:hover,.blog-entry.post .blog-entry-header .entry-title a:hover,.blog-entry.post .blog-entry-readmore a:hover,.blog-entry.thumbnail-entry .blog-entry-category a,ul.meta li a:hover,.dropcap,.single nav.post-navigation .nav-links .title,body .related-post-title a:hover,body #wp-calendar caption,body .contact-info-widget.default i,body .contact-info-widget.big-icons i,body .custom-links-widget .oceanwp-custom-links li a:hover,body .custom-links-widget .oceanwp-custom-links li a:hover:before,body .posts-thumbnails-widget li a:hover,body .social-widget li.oceanwp-email a:hover,.comment-author .comment-meta .comment-reply-link,#respond #cancel-comment-reply-link:hover,#footer-widgets .footer-box a:hover,#footer-bottom a:hover,#footer-bottom #footer-bottom-menu a:hover,.sidr a:hover,.sidr-class-dropdown-toggle:hover,.sidr-class-menu-item-has-children.active >a,.sidr-class-menu-item-has-children.active >a >.sidr-class-dropdown-toggle,input[type=checkbox]:checked:before{color:#4643db}.single nav.post-navigation .nav-links .title .owp-icon use,.blog-entry.post .blog-entry-readmore a:hover .owp-icon use,body .contact-info-widget.default .owp-icon use,body .contact-info-widget.big-icons .owp-icon use{stroke:#4643db}input[type="button"],input[type="reset"],input[type="submit"],button[type="submit"],.button,#site-navigation-wrap .dropdown-menu >li.btn >a >span,.thumbnail:hover i,.post-quote-content,.omw-modal .omw-close-modal,body .contact-info-widget.big-icons li:hover i,body div.wpforms-container-full .wpforms-form input[type=submit],body div.wpforms-container-full .wpforms-form button[type=submit],body div.wpforms-container-full .wpforms-form .wpforms-page-button{background-color:#4643db}.thumbnail:hover .link-post-svg-icon{background-color:#4643db}body .contact-info-widget.big-icons li:hover .owp-icon{background-color:#4643db}.widget-title{border-color:#4643db}blockquote{border-color:#4643db}#searchform-dropdown{border-color:#4643db}.dropdown-menu .sub-menu{border-color:#4643db}.blog-entry.large-entry .blog-entry-readmore a:hover{border-color:#4643db}.oceanwp-newsletter-form-wrap input[type="email"]:focus{border-color:#4643db}.social-widget li.oceanwp-email a:hover{border-color:#4643db}#respond #cancel-comment-reply-link:hover{border-color:#4643db}body .contact-info-widget.big-icons li:hover i{border-color:#4643db}#footer-widgets .oceanwp-newsletter-form-wrap input[type="email"]:focus{border-color:#4643db}blockquote,.wp-block-quote{border-left-color:#4643db}body .contact-info-widget.big-icons li:hover .owp-icon{border-color:#4643db}input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,button[type="submit"]:hover,input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,button[type="submit"]:focus,.button:hover,#site-navigation-wrap .dropdown-menu >li.btn >a:hover >span,.post-quote-author,.omw-modal .omw-close-modal:hover,body div.wpforms-container-full .wpforms-form input[type=submit]:hover,body div.wpforms-container-full .wpforms-form button[type=submit]:hover,body div.wpforms-container-full .wpforms-form .wpforms-page-button:hover{background-color:#7123ae}table th,table td,hr,.content-area,body.content-left-sidebar #content-wrap .content-area,.content-left-sidebar .content-area,#top-bar-wrap,#site-header,#site-header.top-header #search-toggle,.dropdown-menu ul li,.centered-minimal-page-header,.blog-entry.post,.blog-entry.grid-entry .blog-entry-inner,.blog-entry.thumbnail-entry .blog-entry-bottom,.single-post .entry-title,.single .entry-share-wrap .entry-share,.single .entry-share,.single .entry-share ul li a,.single nav.post-navigation,.single nav.post-navigation .nav-links .nav-previous,#author-bio,#author-bio .author-bio-avatar,#author-bio .author-bio-social li a,#related-posts,#comments,.comment-body,#respond #cancel-comment-reply-link,#blog-entries .type-page,.page-numbers a,.page-numbers span:not(.elementor-screen-only),.page-links span,body #wp-calendar caption,body #wp-calendar th,body #wp-calendar tbody,body .contact-info-widget.default i,body .contact-info-widget.big-icons i,body .posts-thumbnails-widget li,body .tagcloud a{border-color:}body .contact-info-widget.big-icons .owp-icon,body .contact-info-widget.default .owp-icon{border-color:}#main #content-wrap,.separate-layout #main #content-wrap{padding-top:1px}#scroll-top{bottom:85px}#scroll-top{width:42px;height:42px;line-height:42px}#scroll-top{font-size:26px}#scroll-top .owp-icon{width:26px;height:26px}#scroll-top{background-color:#f22a02}#scroll-top:hover{background-color:#1e73be}#scroll-top{color:#000000}#scroll-top .owp-icon use{stroke:#000000}.page-numbers a,.page-numbers span:not(.elementor-screen-only),.page-links span{font-size:19px}form input[type="text"],form input[type="password"],form input[type="email"],form input[type="url"],form input[type="date"],form input[type="month"],form input[type="time"],form input[type="datetime"],form input[type="datetime-local"],form input[type="week"],form input[type="number"],form input[type="search"],form input[type="tel"],form input[type="color"],form select,form textarea,.select2-container .select2-choice,.woocommerce .woocommerce-checkout .select2-container--default .select2-selection--single{border-color:#eeeeee}body div.wpforms-container-full .wpforms-form input[type=date],body div.wpforms-container-full .wpforms-form input[type=datetime],body div.wpforms-container-full .wpforms-form input[type=datetime-local],body div.wpforms-container-full .wpforms-form input[type=email],body div.wpforms-container-full .wpforms-form input[type=month],body div.wpforms-container-full .wpforms-form input[type=number],body div.wpforms-container-full .wpforms-form input[type=password],body div.wpforms-container-full .wpforms-form input[type=range],body div.wpforms-container-full .wpforms-form input[type=search],body div.wpforms-container-full .wpforms-form input[type=tel],body div.wpforms-container-full .wpforms-form input[type=text],body div.wpforms-container-full .wpforms-form input[type=time],body div.wpforms-container-full .wpforms-form input[type=url],body div.wpforms-container-full .wpforms-form input[type=week],body div.wpforms-container-full .wpforms-form select,body div.wpforms-container-full .wpforms-form textarea{border-color:#eeeeee}form input[type="text"]:focus,form input[type="password"]:focus,form input[type="email"]:focus,form input[type="tel"]:focus,form input[type="url"]:focus,form input[type="search"]:focus,form textarea:focus,.select2-drop-active,.select2-dropdown-open.select2-drop-above .select2-choice,.select2-dropdown-open.select2-drop-above .select2-choices,.select2-drop.select2-drop-above.select2-drop-active,.select2-container-active .select2-choice,.select2-container-active .select2-choices{border-color:#9543d5}body div.wpforms-container-full .wpforms-form input:focus,body div.wpforms-container-full .wpforms-form textarea:focus,body div.wpforms-container-full .wpforms-form select:focus{border-color:#9543d5}form input[type="text"],form input[type="password"],form input[type="email"],form input[type="url"],form input[type="date"],form input[type="month"],form input[type="time"],form input[type="datetime"],form input[type="datetime-local"],form input[type="week"],form input[type="number"],form input[type="search"],form input[type="tel"],form input[type="color"],form select,form textarea,.woocommerce .woocommerce-checkout .select2-container--default .select2-selection--single{background-color:#f9f9f9}body div.wpforms-container-full .wpforms-form input[type=date],body div.wpforms-container-full .wpforms-form input[type=datetime],body div.wpforms-container-full .wpforms-form input[type=datetime-local],body div.wpforms-container-full .wpforms-form input[type=email],body div.wpforms-container-full .wpforms-form input[type=month],body div.wpforms-container-full .wpforms-form input[type=number],body div.wpforms-container-full .wpforms-form input[type=password],body div.wpforms-container-full .wpforms-form input[type=range],body div.wpforms-container-full .wpforms-form input[type=search],body div.wpforms-container-full .wpforms-form input[type=tel],body div.wpforms-container-full .wpforms-form input[type=text],body div.wpforms-container-full .wpforms-form input[type=time],body div.wpforms-container-full .wpforms-form input[type=url],body div.wpforms-container-full .wpforms-form input[type=week],body div.wpforms-container-full .wpforms-form select,body div.wpforms-container-full .wpforms-form textarea{background-color:#f9f9f9}.theme-button,input[type="submit"],button[type="submit"],button,.button,body div.wpforms-container-full .wpforms-form input[type=submit],body div.wpforms-container-full .wpforms-form button[type=submit],body div.wpforms-container-full .wpforms-form .wpforms-page-button{border-radius:6px}/* Top Bar CSS */#top-bar-wrap,.oceanwp-top-bar-sticky{background-color:#11073f}#top-bar-wrap{border-color:#1e73be}#top-bar-wrap,#top-bar-content strong{color:#f4d522}#top-bar-content a,#top-bar-social-alt a{color:#1e73be}#top-bar-content a:hover,#top-bar-social-alt a:hover{color:#1e73be}#top-bar-social li a{font-size:15px}#top-bar-social li a{color:#f4d522}#top-bar-social li a .owp-icon use{stroke:#f4d522}#top-bar-social li a:hover{color:#1e73be!important}#top-bar-social li a:hover .owp-icon use{stroke:#1e73be!important}/* Header CSS */#site-header.top-header #search-toggle{border-color:#d3bd2c}#site-header.top-header #search-toggle a:hover{color:#1e73be}#site-header.has-header-media .overlay-header-media{background-color:rgba(142,142,142,0)}/* Header Image CSS */#site-header{background-image:url(https://machinemantra.in/wp-content/uploads/2021/11/Lime-Criss-Cross-Lines-Store-Header-2.png);background-position:top left;background-attachment:scroll;background-repeat:no-repeat}/* Sidebar CSS */.widget-area{padding:6px 0 8px 34px!important}.widget-area .sidebar-box{background-color:#ededed}.widget-title{margin-bottom:31px}/* Footer Bottom CSS */#footer-bottom,#footer-bottom p{color:#a3a3a3}#footer-bottom a,#footer-bottom #footer-bottom-menu a{color:#d3d3d3}#footer-bottom a:hover,#footer-bottom #footer-bottom-menu a:hover{color:#ffffff}/* Typography CSS */#top-bar-content,#top-bar-social-alt{font-family:Arima Madurai;font-weight:700;font-style:normal;line-height:1.7;text-transform:capitalize}#footer-bottom #copyright{font-size:10px;letter-spacing:1px;text-transform:uppercase}#footer-bottom #footer-bottom-menu{font-weight:600;font-size:10px;letter-spacing:1px;text-transform:uppercase}
+</style><style type="text/css">#mc_embed_signup input.mce_inline_error { border-color:#6B0505; } #mc_embed_signup div.mce_inline_error { margin: 0 0 1em 0; padding: 5px 10px; background-color:#6B0505; font-weight: bold; z-index: 1; color:#fff; }</style><link rel="preload" href="./Titanic Survival Prediction using Python - Machine Mantra_files/f(3).txt" as="script"><script type="text/javascript" src="./Titanic Survival Prediction using Python - Machine Mantra_files/f(3).txt"></script><link rel="stylesheet" type="text/css" href="./Titanic Survival Prediction using Python - Machine Mantra_files/modal.css" media="all"><style type="text/css" id=""></style></head><iframe id="google_esf" name="google_esf" src="./Titanic Survival Prediction using Python - Machine Mantra_files/zrt_lookup.html" style="display: none;"></iframe>
+
+<body class="post-template-default single single-post postid-636 single-format-standard wp-embed-responsive oceanwp-theme dropdown-mobile top-header-style no-header-border default-breakpoint has-sidebar content-right-sidebar post-in-category-data-analysis post-in-category-machine-learning-projects has-topbar page-header-disabled has-blog-grid pagination-left elementor-default elementor-kit-2180 cookies-not-set" itemscope="itemscope" itemtype="https://schema.org/Article" style="zoom: 1; overflow: visible;">
+
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-dark-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0 0.49803921568627"></fefuncr><fefuncg type="table" tableValues="0 0.49803921568627"></fefuncg><fefuncb type="table" tableValues="0 0.49803921568627"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0 1"></fefuncr><fefuncg type="table" tableValues="0 1"></fefuncg><fefuncb type="table" tableValues="0 1"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0.54901960784314 0.98823529411765"></fefuncr><fefuncg type="table" tableValues="0 1"></fefuncg><fefuncb type="table" tableValues="0.71764705882353 0.25490196078431"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-red"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0 1"></fefuncr><fefuncg type="table" tableValues="0 0.27843137254902"></fefuncg><fefuncb type="table" tableValues="0.5921568627451 0.27843137254902"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-midnight"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0 0"></fefuncr><fefuncg type="table" tableValues="0 0.64705882352941"></fefuncg><fefuncb type="table" tableValues="0 1"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-magenta-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0.78039215686275 1"></fefuncr><fefuncg type="table" tableValues="0 0.94901960784314"></fefuncg><fefuncb type="table" tableValues="0.35294117647059 0.47058823529412"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-green"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0.65098039215686 0.40392156862745"></fefuncr><fefuncg type="table" tableValues="0 1"></fefuncg><fefuncb type="table" tableValues="0.44705882352941 0.4"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-orange"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0.098039215686275 1"></fefuncr><fefuncg type="table" tableValues="0 0.66274509803922"></fefuncg><fefuncb type="table" tableValues="0.84705882352941 0.41960784313725"></fefuncb><fefunca type="table" tableValues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg>
+	
+	<div id="outer-wrap" class="site clr">
+
+		<a class="skip-link screen-reader-text" href="https://machinemantra.in/titanic-data-set/#main">Skip to content</a>
+
+		
+		<div id="wrap" class="clr">
+
+			
+
+<div id="top-bar-wrap" class="clr">
+
+	<div id="top-bar" class="clr container">
+
+		
+		<div id="top-bar-inner" class="clr">
+
+			
+	<div id="top-bar-content" class="clr has-content top-bar-left">
+
+		
+		
+			
+				<span class="topbar-content">
+
+					Machine Learing Tutorials
+				</span>
+
+				
+	</div><!-- #top-bar-content -->
+
+
+
+<div id="top-bar-social" class="clr top-bar-right">
+
+	<ul class="clr" aria-label="Social links">
+
+		<li class="oceanwp-twitter"><a href="https://twitter.com/PriancaaSharma" aria-label="Twitter (opens in a new tab)" target="_blank" rel="noopener noreferrer"></a></li><li class="oceanwp-facebook"><a href="https://www.facebook.com/MachineLearningDemystified" aria-label="Facebook (opens in a new tab)" target="_blank" rel="noopener noreferrer"></a></li><li class="oceanwp-instagram"><a href="https://www.instagram.com/machinemantra" aria-label="Instagram (opens in a new tab)" target="_blank" rel="noopener noreferrer"></a></li><li class="oceanwp-linkedin"><a href="http://www.linkedin.com/in/priyanka-sharma-334993164" aria-label="LinkedIn (opens in a new tab)" target="_blank" rel="noopener noreferrer"></a></li><li class="oceanwp-youtube"><a href="https://www.youtube.com/c/PriyankaSharmastudyclub" aria-label="Youtube (opens in a new tab)" target="_blank" rel="noopener noreferrer"></a></li>
+	</ul>
+
+</div><!-- #top-bar-social -->
+
+		</div><!-- #top-bar-inner -->
+
+		
+	</div><!-- #top-bar -->
+
+</div><!-- #top-bar-wrap -->
+
+
+			
+<header id="site-header" class="top-header header-replace has-header-media clr" data-height="74" itemscope="itemscope" itemtype="https://schema.org/WPHeader" role="banner">
+
+	
+		
+
+<div class="header-top clr">
+
+	
+	<div id="site-header-inner" class="clr container">
+
+		
+<div id="searchform-header-replace" class="header-searchform-wrap clr">
+<form role="search" method="get" action="https://machinemantra.in/" class="header-searchform">
+		<span class="screen-reader-text">Search this website</span>
+		<input aria-label="Submit search" type="search" name="s" autocomplete="off" value="" placeholder="Type then hit enter to search...">
+					</form>
+	<span id="searchform-header-replace-close" aria-label="Close this search form"></span>
+</div><!-- #searchform-header-replace -->
+
+		<div class="left clr">
+
+			<div class="inner">
+
+							<div id="site-navigation-wrap" class="no-top-border clr">
+			
+			
+			
+			<nav id="site-navigation" class="navigation main-navigation clr" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement" role="navigation">
+
+				<ul id="menu-main-menu" class="main-menu dropdown-menu sf-menu"><li id="menu-item-3362" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-3362"><a href="https://machinemantra.in/elementor-2912/" class="menu-link"><span class="text-wrap">About Us</span></a></li><li id="menu-item-3130" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3130"><a href="https://machinemantra.in/lp-courses-3/" class="menu-link"><span class="text-wrap">All Courses</span></a></li><li id="menu-item-3340" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag current-menu-ancestor current-menu-parent menu-item-has-children dropdown menu-item-3340"><a href="https://machinemantra.in/tag/data-science-projects/" class="menu-link"><span class="text-wrap">Data Science Projects</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-3313" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3313"><a href="https://machinemantra.in/?p=2451" class="menu-link"><span class="text-wrap">Machine Learning Projects: Python</span></a></li>	<li id="menu-item-3314" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3314"><a href="https://machinemantra.in/stemming-and-lemmatization-in-python-explained-with-examples/" class="menu-link"><span class="text-wrap">Stemming and Lemmatization in Python explained with Examples</span></a></li>	<li id="menu-item-3315" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3315"><a href="https://machinemantra.in/time-series-analysis-in-python-basic-tutorial/" class="menu-link"><span class="text-wrap">Time Series Analysis in Python Basic Tutorial</span></a></li>	<li id="menu-item-3318" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3318"><a href="https://machinemantra.in/breast-cancer-wisconsin-dataset/" class="menu-link"><span class="text-wrap">Breast Cancer Wisconsin Dataset</span></a></li>	<li id="menu-item-3319" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3319"><a href="https://machinemantra.in/adult-uci-dataset-analysis-with-python/" class="menu-link"><span class="text-wrap">Adult UCI Dataset Analysis with Python</span></a></li>	<li id="menu-item-3316" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-has-children dropdown menu-item-3316"><a href="https://machinemantra.in/movie-recommendation-system-using-python/" class="menu-link"><span class="text-wrap">Movie Recommendation System Using Python</span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-3317" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3317"><a href="https://machinemantra.in/content-based-recommender-system-python/" class="menu-link"><span class="text-wrap">Content-Based Recommender System Python</span></a></li>	</ul>
+</li>	<li id="menu-item-3321" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3321"><a href="https://machinemantra.in/heart-disease-prediction-in-python/" class="menu-link"><span class="text-wrap">Heart Disease Prediction in Python</span></a></li>	<li id="menu-item-3322" class="menu-item menu-item-type-post_type menu-item-object-post current-menu-item menu-item-3322"><a href="https://machinemantra.in/titanic-data-set/" class="menu-link"><span class="text-wrap">Titanic Survival Prediction using Python</span></a></li>	<li id="menu-item-3323" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3323"><a href="https://machinemantra.in/boston-data-set-analysis/" class="menu-link"><span class="text-wrap">Boston Data Set Analysis</span></a></li>	<li id="menu-item-3324" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-has-children dropdown menu-item-3324"><a href="https://machinemantra.in/data-analysis/" class="menu-link"><span class="text-wrap">Data Analysis : Uber</span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-3325" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3325"><a href="https://machinemantra.in/data-visualization/" class="menu-link"><span class="text-wrap">Data Visualization Uber Data Set</span></a></li>	</ul>
+</li></ul>
+</li><li id="menu-item-3342" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-has-children dropdown menu-item-3342"><a href="https://machinemantra.in/tag/must-read/" class="menu-link"><span class="text-wrap">MUST READ</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-3306" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3306"><a href="https://machinemantra.in/what-is-web-scraping/" class="menu-link"><span class="text-wrap">What is Web Scraping?</span></a></li>	<li id="menu-item-3307" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3307"><a href="https://machinemantra.in/web-scraping-using-python/" class="menu-link"><span class="text-wrap">Web Scraping using Python</span></a></li>	<li id="menu-item-3308" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3308"><a href="https://machinemantra.in/machine-learning-scope/" class="menu-link"><span class="text-wrap">Machine Learning Changing the World</span></a></li>	<li id="menu-item-3312" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3312"><a href="https://machinemantra.in/understanding-r-for-data-science/" class="menu-link"><span class="text-wrap">Understanding R for Data Science</span></a></li>	<li id="menu-item-3320" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3320"><a href="https://machinemantra.in/computer-vision/" class="menu-link"><span class="text-wrap">Computer Vision</span></a></li></ul>
+</li><li id="menu-item-3341" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-has-children dropdown menu-item-3341"><a href="https://machinemantra.in/tag/ml-concepts/" class="menu-link"><span class="text-wrap">ML CONCEPTS</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-3309" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3309"><a href="https://machinemantra.in/outliers/" class="menu-link"><span class="text-wrap">What are Outliers in the Data Set</span></a></li>	<li id="menu-item-3310" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3310"><a href="https://machinemantra.in/machine-learning-algorithms/" class="menu-link"><span class="text-wrap">Machine Learning Algorithms</span></a></li>	<li id="menu-item-3311" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3311"><a href="https://machinemantra.in/machine-learning-metrics/" class="menu-link"><span class="text-wrap">Machine Learning Metrics</span></a></li>	<li id="menu-item-3326" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3326"><a href="https://machinemantra.in/libraries-in-python/" class="menu-link"><span class="text-wrap">Important Libraries in Python</span></a></li></ul>
+</li></ul>
+			</nav><!-- #site-navigation -->
+
+			
+			
+					</div><!-- #site-navigation-wrap -->
+			
+		
+	
+				
+	
+	<div class="oceanwp-mobile-menu-icon clr mobile-right">
+
+		
+		
+		
+		<a href="javascript:void(0)" class="mobile-menu" aria-label="Mobile Menu">
+							<i class="fa fa-bars" aria-hidden="true"></i>
+								<span class="oceanwp-text">Menu</span>
+				<span class="oceanwp-close-text">Close</span>
+						</a>
+
+		
+		
+		
+	</div><!-- #oceanwp-mobile-menu-navbar -->
+
+	
+
+			</div>
+
+		</div>
+
+		<div class="right clr">
+
+			<div class="inner">
+
+				<div id="search-toggle"><a href="javascript:void(0)" class="site-search-toggle search-header-replace-toggle" aria-label="Search website"></a></div>
+			</div>
+
+		</div>
+
+	</div><!-- #site-header-inner -->
+
+	
+<div id="mobile-dropdown" class="clr" style="box-sizing: border-box; display: none;">
+
+	<nav class="clr" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+
+		<ul id="menu-main-menu-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-3362"><a href="https://machinemantra.in/elementor-2912/">About Us</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3130"><a href="https://machinemantra.in/lp-courses-3/">All Courses</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-post_tag current-menu-ancestor current-menu-parent menu-item-has-children menu-item-3340"><a href="https://machinemantra.in/tag/data-science-projects/">Data Science Projects<span class="dropdown-toggle" tabindex="0"></span></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3313"><a href="https://machinemantra.in/?p=2451">Machine Learning Projects: Python</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3314"><a href="https://machinemantra.in/stemming-and-lemmatization-in-python-explained-with-examples/">Stemming and Lemmatization in Python explained with Examples</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3315"><a href="https://machinemantra.in/time-series-analysis-in-python-basic-tutorial/">Time Series Analysis in Python Basic Tutorial</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3318"><a href="https://machinemantra.in/breast-cancer-wisconsin-dataset/">Breast Cancer Wisconsin Dataset</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3319"><a href="https://machinemantra.in/adult-uci-dataset-analysis-with-python/">Adult UCI Dataset Analysis with Python</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-has-children menu-item-3316"><a href="https://machinemantra.in/movie-recommendation-system-using-python/">Movie Recommendation System Using Python<span class="dropdown-toggle" tabindex="0"></span></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3317"><a href="https://machinemantra.in/content-based-recommender-system-python/">Content-Based Recommender System Python</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3321"><a href="https://machinemantra.in/heart-disease-prediction-in-python/">Heart Disease Prediction in Python</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-post current-menu-item menu-item-3322"><a href="https://machinemantra.in/titanic-data-set/" aria-current="page">Titanic Survival Prediction using Python</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3323"><a href="https://machinemantra.in/boston-data-set-analysis/">Boston Data Set Analysis</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-has-children menu-item-3324"><a href="https://machinemantra.in/data-analysis/">Data Analysis : Uber<span class="dropdown-toggle" tabindex="0"></span></a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3325"><a href="https://machinemantra.in/data-visualization/">Data Visualization Uber Data Set</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-has-children menu-item-3342"><a href="https://machinemantra.in/tag/must-read/">MUST READ<span class="dropdown-toggle" tabindex="0"></span></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3306"><a href="https://machinemantra.in/what-is-web-scraping/">What is Web Scraping?</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3307"><a href="https://machinemantra.in/web-scraping-using-python/">Web Scraping using Python</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3308"><a href="https://machinemantra.in/machine-learning-scope/">Machine Learning Changing the World</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3312"><a href="https://machinemantra.in/understanding-r-for-data-science/">Understanding R for Data Science</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3320"><a href="https://machinemantra.in/computer-vision/">Computer Vision</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-has-children menu-item-3341"><a href="https://machinemantra.in/tag/ml-concepts/">ML CONCEPTS<span class="dropdown-toggle" tabindex="0"></span></a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3309"><a href="https://machinemantra.in/outliers/">What are Outliers in the Data Set</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3310"><a href="https://machinemantra.in/machine-learning-algorithms/">Machine Learning Algorithms</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3311"><a href="https://machinemantra.in/machine-learning-metrics/">Machine Learning Metrics</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3326"><a href="https://machinemantra.in/libraries-in-python/">Important Libraries in Python</a></li>
+</ul>
+</li>
+</ul>
+<div id="mobile-menu-search" class="clr">
+	<form aria-label="Search this website" method="get" action="https://machinemantra.in/" class="mobile-searchform" role="search">
+		<input aria-label="Insert search query" value="" class="field" id="ocean-mobile-search-1" type="search" name="s" autocomplete="off" placeholder="Search">
+		<button aria-label="Submit search" type="submit" class="searchform-submit">
+					</button>
+					</form>
+</div><!-- .mobile-menu-search -->
+
+	</nav>
+
+</div>
+
+	
+</div><!-- .header-top -->
+
+	<div class="header-bottom clr">
+		<div class="container">
+			
+
+<div id="site-logo" class="clr" itemscope="" itemtype="https://schema.org/Brand">
+
+	
+	<div id="site-logo-inner" class="clr">
+
+						<a href="https://machinemantra.in/" rel="home" class="site-title site-logo-text">Machine Mantra</a>
+				
+	</div><!-- #site-logo-inner -->
+
+	
+				<div id="site-description"><h2>Online Learning Simplified</h2></div>
+			
+</div><!-- #site-logo -->
+
+		</div>
+	</div>
+	
+					<div class="overlay-header-media"></div>
+			
+		
+</header><!-- #site-header -->
+
+
+			
+			<main id="main" class="site-main clr" role="main">
+
+				
+	
+	<div id="content-wrap" class="container clr">
+
+		
+		<div id="primary" class="content-area clr">
+
+			
+			<div id="content" class="site-content clr">
+
+				
+				
+<article id="post-636">
+
+	
+<div class="thumbnail">
+
+	<img width="800" height="600" src="./Titanic Survival Prediction using Python - Machine Mantra_files/titanic.png" class="attachment-full size-full wp-post-image" alt="You are currently viewing Titanic Survival Prediction using Python" itemprop="image" srcset="https://machinemantra.in/wp-content/uploads/2019/09/titanic.png 800w, https://machinemantra.in/wp-content/uploads/2019/09/titanic-300x225.png 300w, https://machinemantra.in/wp-content/uploads/2019/09/titanic-768x576.png 768w" sizes="(max-width: 800px) 100vw, 800px">
+</div><!-- .thumbnail -->
+
+
+<header class="entry-header clr">
+	<h2 class="single-post-title entry-title" itemprop="headline">Titanic Survival Prediction using Python</h2><!-- .single-post-title -->
+</header><!-- .entry-header -->
+
+
+
+<div class="entry-content clr" itemprop="text">
+	
+<p>Titanic Survival Prediction data set, the main task is to predict whether the passenger will survive or not. The survived column has two values where 0 indicates Not Survived, and 1 indicates Survived. </p>
+
+
+
+<p> I shall go step by step with the first step been downloading the data, loading the data, and basic libraries . Moving forward with data exploration, data wrangling(cleaning) , data visualization, training our data and finally making predictions , finding out the accuracy of the model.</p>
+
+
+
+<p>The details of the data set can be understood as we look into it step by step. So, let’s get started.</p>
+
+
+
+<p>To download the data : just type on google download titanic data set csv, you can download it from Kaggle <a rel="noreferrer noopener" href="https://www.kaggle.com/c/titanic/data" target="_blank">https://www.kaggle.com/c/titanic/data</a>. Download the 3 files in case you are participating in the ongoing competition; and if you are just here for practice then we can stick with train.csv file (one of the data files)</p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img loading="lazy" src="./Titanic Survival Prediction using Python - Machine Mantra_files/screenshot-140.png" alt="" class="wp-image-638" width="690" height="296"></figure>
+
+
+
+<h2><strong>DATA ANALYSIS AND VISUALIZATION</strong></h2>
+
+
+
+<p>For further exploring the data, let us visually represent the data in order to get a better idea. Seaborn, Matplotlib data visualization libraries in Python are used in this Machine Learning Project.</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="./Titanic Survival Prediction using Python - Machine Mantra_files/screenshot-141.png" alt="" class="wp-image-639"></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="./Titanic Survival Prediction using Python - Machine Mantra_files/screenshot-142.png" alt="" class="wp-image-640"></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="./Titanic Survival Prediction using Python - Machine Mantra_files/screenshot-120.png" alt="" class="wp-image-641"></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="./Titanic Survival Prediction using Python - Machine Mantra_files/screenshot-121.png" alt="" class="wp-image-642"></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="./Titanic Survival Prediction using Python - Machine Mantra_files/screenshot-122.png" alt="" class="wp-image-643"></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="./Titanic Survival Prediction using Python - Machine Mantra_files/screenshot-123.png" alt="" class="wp-image-644"></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="./Titanic Survival Prediction using Python - Machine Mantra_files/screenshot-124.png" alt="" class="wp-image-645"></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="./Titanic Survival Prediction using Python - Machine Mantra_files/screenshot-125.png" alt="" class="wp-image-646"></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="./Titanic Survival Prediction using Python - Machine Mantra_files/screenshot-126.png" alt="" class="wp-image-648"></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="./Titanic Survival Prediction using Python - Machine Mantra_files/screenshot-127.png" alt="" class="wp-image-649"></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="./Titanic Survival Prediction using Python - Machine Mantra_files/screenshot-128.png" alt="" class="wp-image-650"></figure>
+
+
+
+<h2><strong>Dropping Columns</strong></h2>
+
+
+
+<p>Drop the less significant columns in this case <strong>Cabin. </strong>the Cabin column is not conveying much information as insights can be gathered from other columns like PClass, Embarked etc. Hence, i dropped the Cabin Column. Also, check for any null values, if present we drop all the null values using dropna() function in Python.</p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img loading="lazy" src="./Titanic Survival Prediction using Python - Machine Mantra_files/screenshot-143.png" alt="" class="wp-image-652" width="746" height="338"></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="./Titanic Survival Prediction using Python - Machine Mantra_files/screenshot-144.png" alt="" class="wp-image-653"></figure>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img loading="lazy" src="./Titanic Survival Prediction using Python - Machine Mantra_files/screenshot-145.png" alt="" class="wp-image-654" width="696" height="310"></figure>
+
+
+
+<h2><strong>Model Building Process</strong></h2>
+
+
+
+<p>Prepare the model before it is given as an input to the Machine Leaning(ML) Algorithm. The ML Algorithms do not understand categorical or any other data, which are not numbers, Hence, I will convert the columns with categorical data(Sex, PClass, Embarked) into numeric using One Hot Encoding.</p>
+
+
+
+<h3><strong>ONE HOT ENCODING</strong></h3>
+
+
+
+<p><strong>One-Hot Encoding</strong>&nbsp;simply creates one column for every possible value and put a&nbsp;<code>1</code>&nbsp;in the appropriate column.&nbsp;</p>
+
+
+
+<p>I will convert a few columns into categorical data to perform Logistic Regression, as Logistic Regression takes categorical /binary values. get_dummies() function is used to Convert categorical variable into dummy/indicator variables. For more information visit the Pandas documnetation: <a rel="noreferrer noopener" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html" target="_blank">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html</a></p>
+
+
+
+<figure class="wp-block-image size-large"><img src="./Titanic Survival Prediction using Python - Machine Mantra_files/screenshot-146.png" alt="" class="wp-image-656"></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="./Titanic Survival Prediction using Python - Machine Mantra_files/screenshot-147.png" alt="" class="wp-image-657"></figure>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img loading="lazy" src="./Titanic Survival Prediction using Python - Machine Mantra_files/screenshot-148.png" alt="" class="wp-image-658" width="732" height="303"></figure>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img loading="lazy" src="./Titanic Survival Prediction using Python - Machine Mantra_files/screenshot-149.png" alt="" class="wp-image-659" width="688" height="209"></figure>
+
+
+
+<h2><strong>Training the Model</strong></h2>
+
+
+
+<p>To train the model, first perform the train, test split and then Logistic Regression Algorithm is applied on to the data.</p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img loading="lazy" src="./Titanic Survival Prediction using Python - Machine Mantra_files/screenshot-138.png" alt="" class="wp-image-661" width="861" height="398"></figure>
+
+
+
+<p>Note : You can change the random state to get different result.</p>
+
+
+
+<figure class="wp-block-image size-large is-resized"><img loading="lazy" src="./Titanic Survival Prediction using Python - Machine Mantra_files/screenshot-139.png" alt="" class="wp-image-662" width="836" height="347"></figure>
+
+
+
+<h2><strong>Concluding Remarks</strong></h2>
+
+
+
+<p>I notice here that accuracy score is close to 80% which makes our model a good model to predict the values accurately , here in Titanic data set our model accurately predicts as to who will survive and who will not survive. </p>
+
+
+
+<p>Through Visualization we found out that females have more chances of survival than males, class 1 have more changes of survival, youth age group 20-35 yrs male from class 3 have not survived. </p>
+
+
+
+<p>Further, other Machine Learning Algorithms can be applied on the same data set, Ensemble algorithms to boost the performance of the model and get good predictions</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<p class="responsive-video-wrap clr"><iframe loading="lazy" title="Titanic Survival Prediction With Python | Machine Leaning Model" width="1200" height="675" src="./Titanic Survival Prediction using Python - Machine Mantra_files/rzpPslm28sw.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+</div></figure>
+
+</div><!-- .entry -->
+
+
+
+
+	<nav class="navigation post-navigation" aria-label="Read more articles">
+		<h2 class="screen-reader-text">Read more articles</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://machinemantra.in/linear-regression/" rel="prev"><span class="title"> Previous Post</span><span class="post-title">Linear Regression</span></a></div><div class="nav-next"><a href="https://machinemantra.in/python-functions/" rel="next"><span class="title"> Next Post</span><span class="post-title">Python- Functions</span></a></div></div>
+	</nav>
+
+	<section id="related-posts" class="clr">
+
+		<h3 class="theme-heading related-posts-title">
+			<span class="text">You Might Also Like</span>
+		</h3>
+
+		<div class="oceanwp-row clr">
+
+			
+			
+				
+				<article class="related-post clr col span_1_of_2 col-1 post-243 post type-post status-publish format-standard has-post-thumbnail hentry category-machine-learning-projects tag-iris-data-set-machine-learning tag-machine-learning-classification-algorithms-examples tag-machine-learning-classification-example-python tag-machine-learning-classification-problem-example tag-machine-learning-classification-python-example tag-machine-learning-example-classification tag-machine-learning-model-for-classification tag-machine-learning-multiclass-classification-example tag-supervised-machine-learning entry has-media">
+
+					
+						<figure class="related-post-media clr">
+
+							<a href="https://machinemantra.in/supervised-learning-example-iris-dataset/" class="related-thumb no-lightbox">
+
+								<img width="300" height="225" src="./Titanic Survival Prediction using Python - Machine Mantra_files/iris-300x225.png" class="attachment-medium size-medium wp-post-image" alt="Read more about the article IRIS Dataset" loading="lazy" itemprop="image" srcset="https://machinemantra.in/wp-content/uploads/2019/09/iris-300x225.png 300w, https://machinemantra.in/wp-content/uploads/2019/09/iris-768x576.png 768w, https://machinemantra.in/wp-content/uploads/2019/09/iris.png 800w" sizes="(max-width: 300px) 100vw, 300px">							</a>
+
+						</figure>
+
+					
+					<h3 class="related-post-title">
+						<a href="https://machinemantra.in/supervised-learning-example-iris-dataset/" rel="bookmark">IRIS Dataset</a>
+					</h3><!-- .related-post-title -->
+
+								
+						<time class="published" datetime="2019-09-18T12:05:07+05:30">September 18, 2019</time>
+						
+					
+				</article><!-- .related-post -->
+
+				
+			
+				
+				<article class="related-post clr col span_1_of_2 col-2 post-1084 post type-post status-publish format-standard has-post-thumbnail hentry category-machine-learning-projects tag-heart-disease-machine-learning tag-heart-disease-prediction tag-kaggle-heart-prediction-dataset tag-machine-learning-project-ideas-for-beginners tag-uci-heart-disease-dataset entry has-media">
+
+					
+						<figure class="related-post-media clr">
+
+							<a href="https://machinemantra.in/heart-disease-prediction-in-python/" class="related-thumb no-lightbox">
+
+								<img width="300" height="225" src="./Titanic Survival Prediction using Python - Machine Mantra_files/heart-disease-300x225.png" class="attachment-medium size-medium wp-post-image" alt="Read more about the article Heart Disease Prediction in Python" loading="lazy" itemprop="image" srcset="https://machinemantra.in/wp-content/uploads/2020/03/heart-disease-300x225.png 300w, https://machinemantra.in/wp-content/uploads/2020/03/heart-disease-768x576.png 768w, https://machinemantra.in/wp-content/uploads/2020/03/heart-disease.png 800w" sizes="(max-width: 300px) 100vw, 300px">							</a>
+
+						</figure>
+
+					
+					<h3 class="related-post-title">
+						<a href="https://machinemantra.in/heart-disease-prediction-in-python/" rel="bookmark">Heart Disease Prediction in Python</a>
+					</h3><!-- .related-post-title -->
+
+								
+						<time class="published" datetime="2020-03-31T17:30:18+05:30">March 31, 2020</time>
+						
+					
+				</article><!-- .related-post -->
+
+				
+			
+		</div><!-- .oceanwp-row -->
+
+	</section><!-- .related-posts -->
+
+
+
+
+<section id="comments" class="comments-area clr has-comments">
+
+	
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://machinemantra.in/titanic-data-set/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://machinemantra.in/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate=""><div class="comment-textarea"><label for="comment" class="screen-reader-text">Comment</label><textarea name="comment" id="comment" cols="39" rows="4" tabindex="0" class="textarea-comment" placeholder="Your comment here..."></textarea></div><div class="comment-form-author"><label for="author" class="screen-reader-text">Enter your name or username to comment</label><input type="text" name="author" id="author" value="" placeholder="Name (required)" size="22" tabindex="0" aria-required="true" class="input-name"></div>
+<div class="comment-form-email"><label for="email" class="screen-reader-text">Enter your email address to comment</label><input type="text" name="email" id="email" value="" placeholder="Email (required)" size="22" tabindex="0" aria-required="true" class="input-email"></div>
+<div class="comment-form-url"><label for="url" class="screen-reader-text">Enter your website URL (optional)</label><input type="text" name="url" id="url" value="" placeholder="Website" size="22" tabindex="0" class="input-website"></div>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="comment-submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="636" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none !important;"><label>Δ<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js" name="ak_js" value="1648494488665"><script>document.getElementById( "ak_js" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>	</div><!-- #respond -->
+	
+</section><!-- #comments -->
+
+</article>
+
+				
+			</div><!-- #content -->
+
+			
+		</div><!-- #primary -->
+
+		
+
+<aside id="right-sidebar" class="sidebar-container widget-area sidebar-primary" itemscope="itemscope" itemtype="https://schema.org/WPSideBar" role="complementary" aria-label="Primary Sidebar">
+
+	
+	<div id="right-sidebar-inner" class="clr">
+
+		<div id="block-31" class="sidebar-box widget_block clr">
+<ul class="wp-container-62420782ce1f2 wp-block-social-links alignleft has-normal-icon-size has-icon-color items-justified-right is-style-logos-only"></ul>
+</div><div id="ocean_about_me-1" class="sidebar-box widget-oceanwp-about-me about-me-widget clr"><h1 class="widget-title">About Me</h1>
+				<div class="oceanwp-about-me">
+
+					<div class="oceanwp-about-me-avatar clr">
+
+													<img src="./Titanic Survival Prediction using Python - Machine Mantra_files/ukHcTJf.jpg" alt="About Me">
+													<h3 class="oceanwp-about-me-name">Priyanka Sharma</h3>
+						
+					</div><!-- .oceanwp-about-me-avatar -->
+
+											<div class="oceanwp-about-me-text clr">I Strated my Data Science Journey in 2019; figured out how to approach ML. The Website Machine Mantra &amp; YouTube Channel are created to help Data Science Enthusiast enjoy their ML learning journey with ME!</div>
+					
+						<ul class="oceanwp-about-me-social style-light">
+							<li class="facebook"><a href="https://www.facebook.com/MachineLearningDemystified" aria-label="Facebook" target="_self"></a></li><li class="instagram"><a href="https://www.instagram.com/machinemantra" aria-label="Instagram" target="_self"></a></li><li class="linkedin"><a href="http://www.linkedin.com/in/priyanka-sharma-334993164" aria-label="LinkedIn" target="_self"></a></li><li class="twitter"><a href="https://twitter.com/PriancaaSharma" aria-label="Twitter" target="_self"></a></li>
+						</ul>
+
+					
+				</div>
+
+			</div><div id="block-57" class="sidebar-box widget_block clr">
+<ul class="wp-container-62420782ce940 wp-block-social-links"><li class="wp-social-link wp-social-link-youtube wp-block-social-link"><a href="https://www.youtube.com/c/PriyankaSharmastudyclub" aria-label="YouTube: https://www.youtube.com/c/PriyankaSharmastudyclub" class="wp-block-social-link-anchor"> <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" focusable="false"><path d="M21.8,8.001c0,0-0.195-1.378-0.795-1.985c-0.76-0.797-1.613-0.801-2.004-0.847c-2.799-0.202-6.997-0.202-6.997-0.202 h-0.009c0,0-4.198,0-6.997,0.202C4.608,5.216,3.756,5.22,2.995,6.016C2.395,6.623,2.2,8.001,2.2,8.001S2,9.62,2,11.238v1.517 c0,1.618,0.2,3.237,0.2,3.237s0.195,1.378,0.795,1.985c0.761,0.797,1.76,0.771,2.205,0.855c1.6,0.153,6.8,0.201,6.8,0.201 s4.203-0.006,7.001-0.209c0.391-0.047,1.243-0.051,2.004-0.847c0.6-0.607,0.795-1.985,0.795-1.985s0.2-1.618,0.2-3.237v-1.517 C22,9.62,21.8,8.001,21.8,8.001z M9.935,14.594l-0.001-5.62l5.404,2.82L9.935,14.594z"></path></svg></a></li>
+
+<li class="wp-social-link wp-social-link-spotify wp-block-social-link"><a href="https://open.spotify.com/show/0tWEWK69gPssW3uN6nuRlA" aria-label="Spotify: https://open.spotify.com/show/0tWEWK69gPssW3uN6nuRlA" class="wp-block-social-link-anchor"> <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" focusable="false"><path d="M12,2C6.477,2,2,6.477,2,12c0,5.523,4.477,10,10,10c5.523,0,10-4.477,10-10C22,6.477,17.523,2,12,2 M16.586,16.424 c-0.18,0.295-0.563,0.387-0.857,0.207c-2.348-1.435-5.304-1.76-8.785-0.964c-0.335,0.077-0.67-0.133-0.746-0.469 c-0.077-0.335,0.132-0.67,0.469-0.746c3.809-0.871,7.077-0.496,9.713,1.115C16.673,15.746,16.766,16.13,16.586,16.424 M17.81,13.7 c-0.226,0.367-0.706,0.482-1.072,0.257c-2.687-1.652-6.785-2.131-9.965-1.166C6.36,12.917,5.925,12.684,5.8,12.273 C5.675,11.86,5.908,11.425,6.32,11.3c3.632-1.102,8.147-0.568,11.234,1.328C17.92,12.854,18.035,13.335,17.81,13.7 M17.915,10.865 c-3.223-1.914-8.54-2.09-11.618-1.156C5.804,9.859,5.281,9.58,5.131,9.086C4.982,8.591,5.26,8.069,5.755,7.919 c3.532-1.072,9.404-0.865,13.115,1.338c0.445,0.264,0.59,0.838,0.327,1.282C18.933,10.983,18.359,11.129,17.915,10.865"></path></svg></a></li>
+
+<li class="wp-social-link wp-social-link-instagram wp-block-social-link"><a href="https://www.instagram.com/machinemantra" aria-label="Instagram: https://www.instagram.com/machinemantra" class="wp-block-social-link-anchor"> <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" focusable="false"><path d="M12,4.622c2.403,0,2.688,0.009,3.637,0.052c0.877,0.04,1.354,0.187,1.671,0.31c0.42,0.163,0.72,0.358,1.035,0.673 c0.315,0.315,0.51,0.615,0.673,1.035c0.123,0.317,0.27,0.794,0.31,1.671c0.043,0.949,0.052,1.234,0.052,3.637 s-0.009,2.688-0.052,3.637c-0.04,0.877-0.187,1.354-0.31,1.671c-0.163,0.42-0.358,0.72-0.673,1.035 c-0.315,0.315-0.615,0.51-1.035,0.673c-0.317,0.123-0.794,0.27-1.671,0.31c-0.949,0.043-1.233,0.052-3.637,0.052 s-2.688-0.009-3.637-0.052c-0.877-0.04-1.354-0.187-1.671-0.31c-0.42-0.163-0.72-0.358-1.035-0.673 c-0.315-0.315-0.51-0.615-0.673-1.035c-0.123-0.317-0.27-0.794-0.31-1.671C4.631,14.688,4.622,14.403,4.622,12 s0.009-2.688,0.052-3.637c0.04-0.877,0.187-1.354,0.31-1.671c0.163-0.42,0.358-0.72,0.673-1.035 c0.315-0.315,0.615-0.51,1.035-0.673c0.317-0.123,0.794-0.27,1.671-0.31C9.312,4.631,9.597,4.622,12,4.622 M12,3 C9.556,3,9.249,3.01,8.289,3.054C7.331,3.098,6.677,3.25,6.105,3.472C5.513,3.702,5.011,4.01,4.511,4.511 c-0.5,0.5-0.808,1.002-1.038,1.594C3.25,6.677,3.098,7.331,3.054,8.289C3.01,9.249,3,9.556,3,12c0,2.444,0.01,2.751,0.054,3.711 c0.044,0.958,0.196,1.612,0.418,2.185c0.23,0.592,0.538,1.094,1.038,1.594c0.5,0.5,1.002,0.808,1.594,1.038 c0.572,0.222,1.227,0.375,2.185,0.418C9.249,20.99,9.556,21,12,21s2.751-0.01,3.711-0.054c0.958-0.044,1.612-0.196,2.185-0.418 c0.592-0.23,1.094-0.538,1.594-1.038c0.5-0.5,0.808-1.002,1.038-1.594c0.222-0.572,0.375-1.227,0.418-2.185 C20.99,14.751,21,14.444,21,12s-0.01-2.751-0.054-3.711c-0.044-0.958-0.196-1.612-0.418-2.185c-0.23-0.592-0.538-1.094-1.038-1.594 c-0.5-0.5-1.002-0.808-1.594-1.038c-0.572-0.222-1.227-0.375-2.185-0.418C14.751,3.01,14.444,3,12,3L12,3z M12,7.378 c-2.552,0-4.622,2.069-4.622,4.622S9.448,16.622,12,16.622s4.622-2.069,4.622-4.622S14.552,7.378,12,7.378z M12,15 c-1.657,0-3-1.343-3-3s1.343-3,3-3s3,1.343,3,3S13.657,15,12,15z M16.804,6.116c-0.596,0-1.08,0.484-1.08,1.08 s0.484,1.08,1.08,1.08c0.596,0,1.08-0.484,1.08-1.08S17.401,6.116,16.804,6.116z"></path></svg></a></li>
+
+<li class="wp-social-link wp-social-link-twitter wp-block-social-link"><a href="https://twitter.com/PriancaaSharma" aria-label="Twitter: https://twitter.com/PriancaaSharma" class="wp-block-social-link-anchor"> <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" focusable="false"><path d="M22.23,5.924c-0.736,0.326-1.527,0.547-2.357,0.646c0.847-0.508,1.498-1.312,1.804-2.27 c-0.793,0.47-1.671,0.812-2.606,0.996C18.324,4.498,17.257,4,16.077,4c-2.266,0-4.103,1.837-4.103,4.103 c0,0.322,0.036,0.635,0.106,0.935C8.67,8.867,5.647,7.234,3.623,4.751C3.27,5.357,3.067,6.062,3.067,6.814 c0,1.424,0.724,2.679,1.825,3.415c-0.673-0.021-1.305-0.206-1.859-0.513c0,0.017,0,0.034,0,0.052c0,1.988,1.414,3.647,3.292,4.023 c-0.344,0.094-0.707,0.144-1.081,0.144c-0.264,0-0.521-0.026-0.772-0.074c0.522,1.63,2.038,2.816,3.833,2.85 c-1.404,1.1-3.174,1.756-5.096,1.756c-0.331,0-0.658-0.019-0.979-0.057c1.816,1.164,3.973,1.843,6.29,1.843 c7.547,0,11.675-6.252,11.675-11.675c0-0.178-0.004-0.355-0.012-0.531C20.985,7.47,21.68,6.747,22.23,5.924z"></path></svg></a></li>
+
+<li class="wp-social-link wp-social-link-linkedin wp-block-social-link"><a href="http://www.linkedin.com/in/priyanka-sharma-334993164" aria-label="LinkedIn: www.linkedin.com/in/priyanka-sharma-334993164" class="wp-block-social-link-anchor"> <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" focusable="false"><path d="M19.7,3H4.3C3.582,3,3,3.582,3,4.3v15.4C3,20.418,3.582,21,4.3,21h15.4c0.718,0,1.3-0.582,1.3-1.3V4.3 C21,3.582,20.418,3,19.7,3z M8.339,18.338H5.667v-8.59h2.672V18.338z M7.004,8.574c-0.857,0-1.549-0.694-1.549-1.548 c0-0.855,0.691-1.548,1.549-1.548c0.854,0,1.547,0.694,1.547,1.548C8.551,7.881,7.858,8.574,7.004,8.574z M18.339,18.338h-2.669 v-4.177c0-0.996-0.017-2.278-1.387-2.278c-1.389,0-1.601,1.086-1.601,2.206v4.249h-2.667v-8.59h2.559v1.174h0.037 c0.356-0.675,1.227-1.387,2.526-1.387c2.703,0,3.203,1.779,3.203,4.092V18.338z"></path></svg></a></li></ul>
+</div><div id="block-66" class="sidebar-box widget_block clr">
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<p class="responsive-video-wrap clr"><iframe loading="lazy" title="Heart Disease Data Analysis with R | Machine Learning Project in R" width="1200" height="675" src="./Titanic Survival Prediction using Python - Machine Mantra_files/kGxbtQuQYDM.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+</div><figcaption>Heart Disease Project in R</figcaption></figure>
+</div><div id="block-64" class="sidebar-box widget_block clr">
+<div class="wp-block-columns alignwide are-vertically-aligned-center">
+<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:100%">
+<div class="wp-block-columns">
+<div class="wp-block-column" style="flex-basis:100%">
+<div class="wp-container-62420782d14d0 wp-block-group"><div class="wp-block-group__inner-container"><ul class="wp-block-latest-posts__list wp-block-latest-posts"><li><div class="wp-block-latest-posts__featured-image aligncenter"><a href="https://machinemantra.in/understanding-r-for-data-science/"><img width="300" height="225" src="./Titanic Survival Prediction using Python - Machine Mantra_files/R-300x225.png" class="attachment-medium size-medium wp-post-image" alt="R Tutorial" loading="lazy" style="" srcset="https://machinemantra.in/wp-content/uploads/2021/09/R-300x225.png 300w, https://machinemantra.in/wp-content/uploads/2021/09/R-768x576.png 768w, https://machinemantra.in/wp-content/uploads/2021/09/R.png 800w" sizes="(max-width: 300px) 100vw, 300px"></a></div><a href="https://machinemantra.in/understanding-r-for-data-science/">Understanding R for Data Science</a></li>
+<li><a href="https://machinemantra.in/machine-learning-metrics/">Machine Learning Metrics</a></li>
+<li><div class="wp-block-latest-posts__featured-image aligncenter"><a href="https://machinemantra.in/machine-learning-algorithms/"><img width="300" height="225" src="./Titanic Survival Prediction using Python - Machine Mantra_files/ML-300x225.png" class="attachment-medium size-medium wp-post-image" alt="Machine Leaning Algorithms" loading="lazy" style="" srcset="https://machinemantra.in/wp-content/uploads/2021/09/ML-300x225.png 300w, https://machinemantra.in/wp-content/uploads/2021/09/ML-768x576.png 768w, https://machinemantra.in/wp-content/uploads/2021/09/ML.png 800w" sizes="(max-width: 300px) 100vw, 300px"></a></div><a href="https://machinemantra.in/machine-learning-algorithms/">Machine Learning Algorithms</a></li>
+<li><div class="wp-block-latest-posts__featured-image aligncenter"><a href="https://machinemantra.in/outliers/"><img width="300" height="225" src="./Titanic Survival Prediction using Python - Machine Mantra_files/outliers-2-1-300x225.png" class="attachment-medium size-medium wp-post-image" alt="Outliers" loading="lazy" style="" srcset="https://machinemantra.in/wp-content/uploads/2021/06/outliers-2-1-300x225.png 300w, https://machinemantra.in/wp-content/uploads/2021/06/outliers-2-1-768x576.png 768w, https://machinemantra.in/wp-content/uploads/2021/06/outliers-2-1.png 800w" sizes="(max-width: 300px) 100vw, 300px"></a></div><a href="https://machinemantra.in/outliers/">What are Outliers in the Data Set</a></li>
+<li><div class="wp-block-latest-posts__featured-image aligncenter"><a href="https://machinemantra.in/content-based-recommender-system/"><img width="300" height="225" src="./Titanic Survival Prediction using Python - Machine Mantra_files/recommender-system-300x225.png" class="attachment-medium size-medium wp-post-image" alt="Content Based Recommender System" loading="lazy" style="" srcset="https://machinemantra.in/wp-content/uploads/2021/02/recommender-system-300x225.png 300w, https://machinemantra.in/wp-content/uploads/2021/02/recommender-system-768x576.png 768w, https://machinemantra.in/wp-content/uploads/2021/02/recommender-system.png 800w" sizes="(max-width: 300px) 100vw, 300px"></a></div><a href="https://machinemantra.in/content-based-recommender-system/">Content Based Recommender System: Part 2</a></li>
+</ul></div></div>
+</div>
+</div>
+</div>
+</div>
+</div><div id="block-65" class="sidebar-box widget_block clr">
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<p class="responsive-video-wrap clr"><iframe loading="lazy" title="AWS Certification Exam, Job, Salary, Scope, Benefits and Limitations" width="1200" height="675" src="./Titanic Survival Prediction using Python - Machine Mantra_files/w_6m0Za5VRU.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+</div><figcaption>Learn about AWS certifications</figcaption></figure>
+</div><div id="block-69" class="sidebar-box widget_block clr">
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<p class="responsive-video-wrap clr"><iframe loading="lazy" title="Breast Cancer  Wisconsin Data Analysis: Machine Learning Project | Exploratory Data Analysis" width="1200" height="675" src="./Titanic Survival Prediction using Python - Machine Mantra_files/2ncx2q5GHbQ.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+</div><figcaption>Breast Cancer Prediction Project Python</figcaption></figure>
+</div><div id="block-70" class="sidebar-box widget_block clr">
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<p class="responsive-video-wrap clr"><iframe loading="lazy" title="Ethical Hacking and Cyber Security | Courses, Certifications, Resources, Jobs, Scope and Salary" width="1200" height="675" src="./Titanic Survival Prediction using Python - Machine Mantra_files/bI6WcUGuqy0.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
+</div><figcaption>Learn details about Ethical Hacking</figcaption></figure>
+</div>
+	</div><!-- #sidebar-inner -->
+
+	
+</aside><!-- #right-sidebar -->
+
+
+	</div><!-- #content-wrap -->
+
+	
+
+	</main><!-- #main -->
+
+	
+	
+	
+		
+<footer id="footer" class="site-footer" itemscope="itemscope" itemtype="https://schema.org/WPFooter" role="contentinfo">
+
+	
+	<div id="footer-inner" class="clr">
+
+		
+
+<div id="footer-widgets" class="oceanwp-row clr">
+
+	
+	<div class="footer-widgets-inner container">
+
+					<div class="footer-box span_1_of_4 col col-1">
+				<div id="block-39" class="footer-widget widget_block clr">
+<ul class="wp-container-62420782d295f wp-block-social-links alignleft has-normal-icon-size has-icon-color items-justified-left items-justified-right is-style-logos-only"><li style="color: #37393b; " class="wp-social-link wp-social-link-twitter wp-block-social-link"><a href="https://twitter.com/PriancaaSharma" aria-label="Twitter: https://twitter.com/PriancaaSharma" rel="noopener nofollow" target="_blank" class="wp-block-social-link-anchor"> <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" focusable="false"><path d="M22.23,5.924c-0.736,0.326-1.527,0.547-2.357,0.646c0.847-0.508,1.498-1.312,1.804-2.27 c-0.793,0.47-1.671,0.812-2.606,0.996C18.324,4.498,17.257,4,16.077,4c-2.266,0-4.103,1.837-4.103,4.103 c0,0.322,0.036,0.635,0.106,0.935C8.67,8.867,5.647,7.234,3.623,4.751C3.27,5.357,3.067,6.062,3.067,6.814 c0,1.424,0.724,2.679,1.825,3.415c-0.673-0.021-1.305-0.206-1.859-0.513c0,0.017,0,0.034,0,0.052c0,1.988,1.414,3.647,3.292,4.023 c-0.344,0.094-0.707,0.144-1.081,0.144c-0.264,0-0.521-0.026-0.772-0.074c0.522,1.63,2.038,2.816,3.833,2.85 c-1.404,1.1-3.174,1.756-5.096,1.756c-0.331,0-0.658-0.019-0.979-0.057c1.816,1.164,3.973,1.843,6.29,1.843 c7.547,0,11.675-6.252,11.675-11.675c0-0.178-0.004-0.355-0.012-0.531C20.985,7.47,21.68,6.747,22.23,5.924z"></path></svg></a></li>
+
+<li style="color: #37393b; " class="wp-social-link wp-social-link-instagram wp-block-social-link"><a href="https://www.instagram.com/machinemantra" aria-label="Instagram: https://www.instagram.com/machinemantra" rel="noopener nofollow" target="_blank" class="wp-block-social-link-anchor"> <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" focusable="false"><path d="M12,4.622c2.403,0,2.688,0.009,3.637,0.052c0.877,0.04,1.354,0.187,1.671,0.31c0.42,0.163,0.72,0.358,1.035,0.673 c0.315,0.315,0.51,0.615,0.673,1.035c0.123,0.317,0.27,0.794,0.31,1.671c0.043,0.949,0.052,1.234,0.052,3.637 s-0.009,2.688-0.052,3.637c-0.04,0.877-0.187,1.354-0.31,1.671c-0.163,0.42-0.358,0.72-0.673,1.035 c-0.315,0.315-0.615,0.51-1.035,0.673c-0.317,0.123-0.794,0.27-1.671,0.31c-0.949,0.043-1.233,0.052-3.637,0.052 s-2.688-0.009-3.637-0.052c-0.877-0.04-1.354-0.187-1.671-0.31c-0.42-0.163-0.72-0.358-1.035-0.673 c-0.315-0.315-0.51-0.615-0.673-1.035c-0.123-0.317-0.27-0.794-0.31-1.671C4.631,14.688,4.622,14.403,4.622,12 s0.009-2.688,0.052-3.637c0.04-0.877,0.187-1.354,0.31-1.671c0.163-0.42,0.358-0.72,0.673-1.035 c0.315-0.315,0.615-0.51,1.035-0.673c0.317-0.123,0.794-0.27,1.671-0.31C9.312,4.631,9.597,4.622,12,4.622 M12,3 C9.556,3,9.249,3.01,8.289,3.054C7.331,3.098,6.677,3.25,6.105,3.472C5.513,3.702,5.011,4.01,4.511,4.511 c-0.5,0.5-0.808,1.002-1.038,1.594C3.25,6.677,3.098,7.331,3.054,8.289C3.01,9.249,3,9.556,3,12c0,2.444,0.01,2.751,0.054,3.711 c0.044,0.958,0.196,1.612,0.418,2.185c0.23,0.592,0.538,1.094,1.038,1.594c0.5,0.5,1.002,0.808,1.594,1.038 c0.572,0.222,1.227,0.375,2.185,0.418C9.249,20.99,9.556,21,12,21s2.751-0.01,3.711-0.054c0.958-0.044,1.612-0.196,2.185-0.418 c0.592-0.23,1.094-0.538,1.594-1.038c0.5-0.5,0.808-1.002,1.038-1.594c0.222-0.572,0.375-1.227,0.418-2.185 C20.99,14.751,21,14.444,21,12s-0.01-2.751-0.054-3.711c-0.044-0.958-0.196-1.612-0.418-2.185c-0.23-0.592-0.538-1.094-1.038-1.594 c-0.5-0.5-1.002-0.808-1.594-1.038c-0.572-0.222-1.227-0.375-2.185-0.418C14.751,3.01,14.444,3,12,3L12,3z M12,7.378 c-2.552,0-4.622,2.069-4.622,4.622S9.448,16.622,12,16.622s4.622-2.069,4.622-4.622S14.552,7.378,12,7.378z M12,15 c-1.657,0-3-1.343-3-3s1.343-3,3-3s3,1.343,3,3S13.657,15,12,15z M16.804,6.116c-0.596,0-1.08,0.484-1.08,1.08 s0.484,1.08,1.08,1.08c0.596,0,1.08-0.484,1.08-1.08S17.401,6.116,16.804,6.116z"></path></svg></a></li>
+
+<li style="color: #37393b; " class="wp-social-link wp-social-link-youtube wp-block-social-link"><a href="https://www.youtube.com/c/PriyankaSharmastudyclub" aria-label="YouTube: https://www.youtube.com/c/PriyankaSharmastudyclub" rel="noopener nofollow" target="_blank" class="wp-block-social-link-anchor"> <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" focusable="false"><path d="M21.8,8.001c0,0-0.195-1.378-0.795-1.985c-0.76-0.797-1.613-0.801-2.004-0.847c-2.799-0.202-6.997-0.202-6.997-0.202 h-0.009c0,0-4.198,0-6.997,0.202C4.608,5.216,3.756,5.22,2.995,6.016C2.395,6.623,2.2,8.001,2.2,8.001S2,9.62,2,11.238v1.517 c0,1.618,0.2,3.237,0.2,3.237s0.195,1.378,0.795,1.985c0.761,0.797,1.76,0.771,2.205,0.855c1.6,0.153,6.8,0.201,6.8,0.201 s4.203-0.006,7.001-0.209c0.391-0.047,1.243-0.051,2.004-0.847c0.6-0.607,0.795-1.985,0.795-1.985s0.2-1.618,0.2-3.237v-1.517 C22,9.62,21.8,8.001,21.8,8.001z M9.935,14.594l-0.001-5.62l5.404,2.82L9.935,14.594z"></path></svg></a></li></ul>
+</div>			</div><!-- .footer-one-box -->
+
+							<div class="footer-box span_1_of_4 col col-2">
+									</div><!-- .footer-one-box -->
+				
+							<div class="footer-box span_1_of_4 col col-3 ">
+									</div><!-- .footer-one-box -->
+				
+							<div class="footer-box span_1_of_4 col col-4">
+									</div><!-- .footer-box -->
+				
+			
+	</div><!-- .container -->
+
+	
+</div><!-- #footer-widgets -->
+
+
+
+<div id="footer-bottom" class="clr">
+
+	
+	<div id="footer-bottom-inner" class="container clr">
+
+		
+			<div id="footer-bottom-menu" class="navigation clr">
+
+				<div class="menu-social-menu-container"><ul id="menu-social-menu" class="menu"><li id="menu-item-2253" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2253"><a target="_blank" rel="noopener" href="https://www.youtube.com/c/PriyankaSharmastudyclub">YouTube Channel</a></li>
+<li id="menu-item-2256" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2256"><a target="_blank" rel="noopener" href="https://www.instagram.com/machinemantra">Instagram</a></li>
+<li id="menu-item-2258" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2258"><a target="_blank" rel="noopener" href="https://www.quora.com/q/gnlqevqgyulcqgxe">Quora</a></li>
+<li id="menu-item-2257" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2257"><a href="https://www.kaggle.com/priyanka841">Kaggle</a></li>
+<li id="menu-item-2255" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2255"><a title="Podcast" target="_blank" rel="noopener" href="https://anchor.fm/priyanka-sharma12">Podcast</a></li>
+</ul></div>
+			</div><!-- #footer-bottom-menu -->
+
+			
+		
+			<div id="copyright" class="clr" role="contentinfo">
+				© Copyright 2020 All Rights Reserved Machine Mantra. 			</div><!-- #copyright -->
+
+			
+	</div><!-- #footer-bottom-inner -->
+
+	
+</div><!-- #footer-bottom -->
+
+
+	</div><!-- #footer-inner -->
+
+	
+</footer><!-- #footer -->
+
+	
+	
+</div><!-- #wrap -->
+
+
+</div><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><ins id="aswift_0_expand" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-table;" tabindex="0" title="Advertisement" aria-label="Advertisement"><ins id="aswift_0_anchor" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./Titanic Survival Prediction using Python - Machine Mantra_files/ads.html" data-google-container-id="a!1" data-load-complete="true"></iframe></ins></ins></ins><!-- #outer-wrap -->
+
+
+
+<a aria-label="Scroll to the top of the page" href="https://machinemantra.in/titanic-data-set/#" id="scroll-top" class="scroll-top-right" style="opacity: 1; display: block;"></a>
+
+
+
+
+<!-- Begin Mailchimp Signup Form -->
+<link href="./Titanic Survival Prediction using Python - Machine Mantra_files/classic-10_7_dtp.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://machinemantra.us20.list-manage.com/subscribe/post?u=94e26d1fc6b044d9a01a10c17&amp;id=f10021d6f4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+    <div id="mc_embed_signup_scroll">
+	<h2>Get Your Free E-Book</h2>
+<div class="mc-field-group">
+	<label for="mce-EMAIL">Email Address </label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" aria-required="true">
+</div>
+<div class="mc-field-group">
+	<label for="mce-FNAME">First Name </label>
+	<input type="text" value="" name="FNAME" class="required" id="mce-FNAME" aria-required="true">
+</div>
+	<div id="mce-responses" class="clear foot">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_94e26d1fc6b044d9a01a10c17_f10021d6f4" tabindex="-1" value=""></div>
+        <div class="optionalParent">
+            <div class="clear foot">
+                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                <p class="brandingLogo"><a href="http://eepurl.com/hNqBrL" title="Mailchimp - email marketing made easy and fun"><img src="./Titanic Survival Prediction using Python - Machine Mantra_files/branding_logo_text_dark_dtp.svg"></a></p>
+            </div>
+        </div>
+    </div>
+</form>
+</div>
+<script type="text/javascript" src="./Titanic Survival Prediction using Python - Machine Mantra_files/mc-validate.js.téléchargement"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<!--End mc_embed_signup--><style>.wp-container-62420782ce1f2 {display: flex;gap: 0.5em;flex-wrap: wrap;align-items: center;align-items: center;}.wp-container-62420782ce1f2 > * { margin: 0; }</style>
+<style>.wp-container-62420782ce940 {display: flex;gap: 0.5em;flex-wrap: wrap;align-items: center;align-items: center;}.wp-container-62420782ce940 > * { margin: 0; }</style>
+<style>.wp-container-62420782d14d0 .alignleft { float: left; margin-right: 2em; }.wp-container-62420782d14d0 .alignright { float: right; margin-left: 2em; }</style>
+<style>.wp-container-62420782d295f {display: flex;gap: 0.5em;flex-wrap: wrap;align-items: center;align-items: center;}.wp-container-62420782d295f > * { margin: 0; }</style>
+<script src="./Titanic Survival Prediction using Python - Machine Mantra_files/comment-reply.min.js.téléchargement" id="comment-reply-js"></script>
+<script src="./Titanic Survival Prediction using Python - Machine Mantra_files/imagesloaded.min.js.téléchargement" id="imagesloaded-js"></script>
+<script src="./Titanic Survival Prediction using Python - Machine Mantra_files/isotope.pkgd.min.js.téléchargement" id="ow-isotop-js"></script>
+<script src="./Titanic Survival Prediction using Python - Machine Mantra_files/flickity.pkgd.min.js.téléchargement" id="ow-flickity-js"></script>
+<script src="./Titanic Survival Prediction using Python - Machine Mantra_files/sidr.js.téléchargement" id="ow-sidr-js"></script>
+<script src="./Titanic Survival Prediction using Python - Machine Mantra_files/magnific-popup.min.js.téléchargement" id="ow-magnific-popup-js"></script><script src="./Titanic Survival Prediction using Python - Machine Mantra_files/embed.js(1).téléchargement" type="text/javascript"></script>
+<script id="oceanwp-main-js-extra">
+var oceanwpLocalize = {"nonce":"edf07dda25","isRTL":"","menuSearchStyle":"header_replace","mobileMenuSearchStyle":"disabled","sidrSource":null,"sidrDisplace":"1","sidrSide":"left","sidrDropdownTarget":"link","verticalHeaderTarget":"link","customSelects":".woocommerce-ordering .orderby, #dropdown_product_cat, .widget_categories select, .widget_archive select, .single-product .variations_form .variations select","ajax_url":"https:\/\/machinemantra.in\/wp-admin\/admin-ajax.php"};
+</script>
+<script src="./Titanic Survival Prediction using Python - Machine Mantra_files/theme.vanilla.min.js.téléchargement" id="oceanwp-main-js"></script>
+<!--[if lt IE 9]>
+<script src='https://machinemantra.in/wp-content/themes/oceanwp/assets/js/third/html5.min.js?ver=3.0.7' id='html5shiv-js'></script>
+<![endif]-->
+<script src="./Titanic Survival Prediction using Python - Machine Mantra_files/e-202213.js.téléchargement" defer=""></script>
+<script>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:10.3',blog:'193781435',post:'636',tz:'5.5',srv:'machinemantra.in'} ]);
+	_stq.push([ 'clickTrackerInit', '193781435', '636' ]);
+</script>
+
+		<!-- Cookie Notice plugin v2.1.5 by Hu-manity.co https://hu-manity.co/ -->
+		<div id="cookie-notice" role="dialog" class="cookie-revoke-hidden cn-position-bottom cn-effect-fade cookie-notice-visible" aria-label="Cookie Notice" style="background-color: rgba(50,50,58,1);"><div class="cookie-notice-container" style="color: #fff;"><span id="cn-notice-text" class="cn-text-container">We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.</span><span id="cn-notice-buttons" class="cn-buttons-container"><a href="https://machinemantra.in/titanic-data-set/#" id="cn-accept-cookie" data-cookie-set="accept" class="cn-set-cookie cn-button bootstrap" aria-label="Ok">Ok</a></span><a href="javascript:void(0);" id="cn-close-notice" data-cookie-set="accept" class="cn-close-icon" aria-label="Ok"></a></div>
+			
+		</div>
+		<!-- / Cookie Notice plugin -->
+
+<iframe src="./Titanic Survival Prediction using Python - Machine Mantra_files/aframe.html" width="0" height="0" style="display: none;"></iframe><img src="./Titanic Survival Prediction using Python - Machine Mantra_files/g.gif" alt="" width="6" height="5" id="wpstats"></body></html>
